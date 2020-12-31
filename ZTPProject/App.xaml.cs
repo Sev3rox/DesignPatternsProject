@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +15,13 @@ namespace ZTPProject
     /// </summary>
     public partial class App : Application
     {
+
+
+        public App()
+    {
+     
+        } 
+  
+ 
     }
 }

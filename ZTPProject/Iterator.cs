@@ -13,8 +13,15 @@ namespace ZTPProject
     class EnemysIterator : Iterator
     {
         private int pos;
-        public override Object Next() { return new Object(); }
-        public override bool hasNext(){return false; }
+        private List<Enemy> Enemies;
+        public EnemysIterator(List<Enemy> Enemies) { this.Enemies = Enemies; }
+        public override Object Next() { return Enemies[pos++]; }
+        public override bool hasNext(){
+            if (Enemies[pos] == null)
+                return false;
+            else
+                return true;
+        }
     }
 
     abstract class IList
@@ -25,6 +32,6 @@ namespace ZTPProject
     class EnemyList : IList
     {
         private List<Enemy> Enemies;
-        public override Iterator CreateIterator() { return new EnemysIterator(); }
+        public override Iterator CreateIterator() { return new EnemysIterator(Enemies); }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,15 +8,33 @@ namespace ZTPProject
 {
     class DBConnection
     {
+
+        private ZTPContext context;
         private DBConnection() { }
         private static DBConnection instance = null;
         public static DBConnection GetInstance()
         {
             if (instance == null)
             {
+
+
                 instance = new DBConnection();
+        
+
             }
             return instance;
+        }
+       public void createcontext()
+        {
+            ServiceProvider serviceProvider;
+            ServiceCollection services = new ServiceCollection();
+            services.AddDbContext<ZTPContext>(options =>
+            {
+                options.UseSqlite("Data Source = ZTP.db");
+            });
+            serviceProvider = services.BuildServiceProvider();
+            var x = serviceProvider.GetService<ZTPContext>();
+            context = x;
         }
     }
 }

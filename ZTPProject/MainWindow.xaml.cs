@@ -20,7 +20,7 @@ namespace ZTPProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(ZTPContext context)
         {
             InitializeComponent();
         }
