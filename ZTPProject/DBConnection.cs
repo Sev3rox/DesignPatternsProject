@@ -24,7 +24,7 @@ namespace ZTPProject
             }
             return instance;
         }
-       public void createcontext()
+       public void CreateContext()
         {
             ServiceProvider serviceProvider;
             ServiceCollection services = new ServiceCollection();
@@ -35,6 +35,10 @@ namespace ZTPProject
             serviceProvider = services.BuildServiceProvider();
             var x = serviceProvider.GetService<ZTPContext>();
             context = x;
+        }
+        public ZTPContext GetContext()
+        {
+            return context;
         }
     }
 }

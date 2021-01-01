@@ -7,8 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Files\Space.jpg" />
+    <None Remove="Files\SpaceBlue.jpg" />
+    <None Remove="Files\SpaceLightBlue.jpg" />
+    <None Remove="Files\top10.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Files\Space.jpg" />
+    <Resource Include="Files\SpaceBlue.jpg" />
+    <Resource Include="Files\SpaceLightBlue.jpg" />
+    <Resource Include="Files\top10.png" />
   </ItemGroup>
 
 </Project>

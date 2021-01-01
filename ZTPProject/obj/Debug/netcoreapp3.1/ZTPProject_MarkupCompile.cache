@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\mjsty\OneDrive\Pulpit\ZTPProject\ZTPProject\obj\Debug\netcoreapp3.1\
-ZTPProject_0rjhbntn_wpftmp
+ZTPProject
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\mjsty\OneDrive\Pulpit\ZTPProject\ZTPProject\App.xaml
-11151548125
+4-1676750893
 
-10707492139
+12-1390648405
 212607414158
-MainWindow.xaml;
+Game.xaml;MainWindow.xaml;MenuPage.xaml;WynikiPage.xaml;
 
-True
+False
 

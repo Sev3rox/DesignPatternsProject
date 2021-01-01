@@ -20,9 +20,13 @@ namespace ZTPProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(ZTPContext context)
+        public MainWindow()
         {
             InitializeComponent();
+            DBConnection connection;
+            connection = DBConnection.GetInstance();
+            connection.CreateContext();
+            ZTPContext con = connection.GetContext();
         }
     }
 }

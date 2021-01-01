@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\mjsty\OneDrive\Pulpit\ZTPProject\ZTPProject\App.xaml
-11151548125
+4-1676750893
 
-11187318673
+14-2124455155
 212607414158
-MainWindow.xaml;
+Game.xaml;MainWindow.xaml;MenuPage.xaml;WynikiPage.xaml;
 
 False
 

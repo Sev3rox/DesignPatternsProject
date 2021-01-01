@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZTPProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+   Title="ZTPProjekt" Height="650" Width="600" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}">
+    <Window.Resources>
+        <Style x:Key="MyFocusVisualStyle">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle  Stroke="Transparent"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid FocusVisualStyle="{DynamicResource MyFocusVisualStyle}">
+        <Frame BorderBrush="Black" BorderThickness="0" 
+               Source="MenuPage.xaml" NavigationUIVisibility="Hidden" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}"/>
     </Grid>
 </Window>

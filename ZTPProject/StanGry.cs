@@ -4,7 +4,9 @@ using System.Text;
 
 namespace ZTPProject
 {
-    class Game
+   public  class StanGry
     {
+        public int Id { get; set; }
+        public int lvl { get; set; }
     }
 }
