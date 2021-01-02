@@ -23,10 +23,7 @@ namespace ZTPProject
         public MainWindow()
         {
             InitializeComponent();
-            DBConnection connection;
-            connection = DBConnection.GetInstance();
-            connection.CreateContext();
-            ZTPContext con = connection.GetContext();
+    
         }
     }
 }

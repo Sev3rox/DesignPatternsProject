@@ -14,7 +14,6 @@ namespace ZTPProject
         abstract public Point getPosition();
         abstract public int getMoney();
         abstract public void setMoney(int mon);
-        abstract public void setDamage(float dmg);
-        abstract public void setMoneyMultiplier(float mon);
+
     }
 }

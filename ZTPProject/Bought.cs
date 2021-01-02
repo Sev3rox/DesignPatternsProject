@@ -15,7 +15,6 @@ namespace ZTPProject
         override public Point getPosition() { return player.getPosition(); }
         override public int getMoney() { return player.getMoney(); }
         override public void setMoney(int mon) { player.setMoney(mon); }
-        override public void setDamage(float dmg) { player.setDamage(dmg); }
-        override public void setMoneyMultiplier(float mon) { player.setMoneyMultiplier(mon); }
+
     }
 }

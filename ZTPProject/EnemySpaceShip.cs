@@ -13,7 +13,7 @@ namespace ZTPProject
         public Point getPosition() { return position; }
         public void setPosition(Point pos) { position = pos; }
         public int getDamage() { return damage; }
-        public void setX(int dam) { damage = dam; }
+        public void setDamage(int dam) { damage = dam; }
         public int getMoney() { return money; }
         public void setMoney(int mon) { money=mon; }
         public int getHealthPoints() { return healthPoints; }

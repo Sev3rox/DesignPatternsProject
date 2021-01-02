@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Files\Boss.png" />
+    <None Remove="Files\Enemy1.png" />
+    <None Remove="Files\Enemy2.png" />
+    <None Remove="Files\Enemy3.png" />
+    <None Remove="Files\Enemy4.png" />
+    <None Remove="Files\MYship.png" />
     <None Remove="Files\Space.jpg" />
     <None Remove="Files\SpaceBlue.jpg" />
     <None Remove="Files\SpaceLightBlue.jpg" />
@@ -19,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Files\Boss.png" />
+    <Resource Include="Files\Enemy1.png" />
+    <Resource Include="Files\Enemy2.png" />
+    <Resource Include="Files\Enemy3.png" />
+    <Resource Include="Files\Enemy4.png" />
+    <Resource Include="Files\MYship.png" />
     <Resource Include="Files\Space.jpg" />
     <Resource Include="Files\SpaceBlue.jpg" />
     <Resource Include="Files\SpaceLightBlue.jpg" />

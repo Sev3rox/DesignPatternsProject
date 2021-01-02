@@ -16,11 +16,7 @@ namespace ZTPProject
         {
             if (instance == null)
             {
-
-
                 instance = new DBConnection();
-        
-
             }
             return instance;
         }

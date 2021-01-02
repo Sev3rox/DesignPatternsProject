@@ -39,7 +39,7 @@
         <Grid.Background >
             <ImageBrush  ImageSource="/Files/Space.jpg" />
         </Grid.Background>
-        <TextBlock Width="auto" Margin="13,45,13,35" FontSize="16" Foreground="#FF2F003A"  TextAlignment="Center"     Name="results" Grid.Column="2" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="3">
+        <TextBlock Width="auto" Margin="13,45,13,35" FontSize="16" Foreground="White"  TextAlignment="Center"     Name="results" Grid.Column="2" Grid.Row="2" Grid.RowSpan="6" Grid.ColumnSpan="3">
             <TextBlock.Background>
                 <ImageBrush ImageSource="/Files/Space.jpg"></ImageBrush>
             </TextBlock.Background>

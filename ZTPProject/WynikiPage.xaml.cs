@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,9 +19,23 @@ namespace ZTPProject
     /// </summary>
     public partial class WynikiPage : Page
     {
-        public WynikiPage()
+        private List<Wyniki> Wyniki;
+        public WynikiPage(ZTPContext context)
         {
             InitializeComponent();
+            var NotSortedWyniki = context.Wyniki.ToList();
+            Wyniki = NotSortedWyniki.OrderByDescending(x => x.result).ToList();
+            string Results="";
+            int i = 1;
+            foreach(Wyniki x in Wyniki)
+            {
+                Results += i.ToString() + ". " + x.result.ToString()+" "+x.nick + Environment.NewLine;
+                i++;
+                if (i == 11)
+                    break;
+            }
+            results.Text = Results;
+
         }
 
         private void Back(object sender, RoutedEventArgs e)
