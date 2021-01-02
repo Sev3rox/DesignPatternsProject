@@ -55,5 +55,10 @@ namespace ZTPProject
         {
             Window.GetWindow(this).Close();
         }
+
+        private void Continue(object sender, RoutedEventArgs e)
+        {
+        
+        }
     }
 }

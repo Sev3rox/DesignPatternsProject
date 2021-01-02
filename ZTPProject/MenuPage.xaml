@@ -63,7 +63,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button  Foreground="AntiqueWhite" FontSize="20"  FontWeight="Bold" Margin="15,0,15,0" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" >
+        <Button Click="Continue"  Foreground="AntiqueWhite" FontSize="20"  FontWeight="Bold" Margin="15,0,15,0" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" >
             <Button.Background>
                 <ImageBrush ImageSource="/Files/SpaceBlue.jpg" />
             </Button.Background> Kontynuj

@@ -190,3 +190,9 @@ C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcor
 C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\ZTPProject.csproj.CoreCompileInputs.cache
 C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\ZTPProject.csproj.CopyComplete
 C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\ZTPProject.genruntimeconfig.cache
+C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\EndGame.g.cs
+C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\Lose.g.cs
+C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\Shop1.g.cs
+C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\EndGame.baml
+C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\Lose.baml
+C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\Shop1.baml
