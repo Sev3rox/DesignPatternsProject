@@ -39,7 +39,7 @@
         </Grid.Background>
         <Image Width="350" Height="300" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="5" Source="Files/EndGameLogo.png"></Image>
         <Image Width="110" Height="120" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5" Margin="5,5,5,0" Source="Files/MyShip.png"></Image>
-        <Label HorizontalAlignment="Center" Content="Twój Wynik:" Foreground="AntiqueWhite" Grid.Column="2" FontSize="20" FontWeight="Bold" Margin="15,8,15,8" Grid.Row="5" Grid.ColumnSpan="3">
+        <Label Name="Res" HorizontalAlignment="Center" Content="Twój Wynik:" Foreground="AntiqueWhite" Grid.Column="2" FontSize="20" FontWeight="Bold" Margin="15,8,15,8" Grid.Row="5" Grid.ColumnSpan="3">
             <Label.Background>
                 <ImageBrush ImageSource="/Files/SpaceBlue.jpg" />
             </Label.Background>

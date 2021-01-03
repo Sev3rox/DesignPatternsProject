@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g6IPJigh5wrcObZzCN8+n9+edqeUvlY22kiM6e8zii8zbZWboOzkBlkW0hi7mHW4GJjjUMiHm47MFXfc+MExRQ==",
+  "dgSpecHash": "JPTVSgHecmG4Y5/Z5r78NFHRiAwpLEw/NsEZAtqBgyVmTznuknZV6HDXj//l+VwG0g4marb3aSYblWIR0C9a/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProject\\ZTPProject\\ZTPProject.csproj",
+  "projectFilePath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProjectt\\ZTPProject\\ZTPProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mjsty\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.1\\microsoft.data.sqlite.core.5.0.1.nupkg.sha512",
     "C:\\Users\\mjsty\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

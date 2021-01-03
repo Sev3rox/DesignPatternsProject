@@ -18,13 +18,26 @@ namespace ZTPProject
     /// </summary>
     public partial class Lose : Page
     {
-        public Lose()
+        ZTPContext context;
+        int result;
+        public Lose(ZTPContext context, int result)
         {
             InitializeComponent();
+            this.context = context;
+            this.result = result;
+            Res.Content = "Twój Wynik: " + result.ToString();
+
         }
 
         private void Back(object sender, RoutedEventArgs e)
         {
+            Wyniki wyn = new Wyniki();
+            wyn.result = result;
+            if (text.Text != "")
+                wyn.nick = text.Text;
+            else
+                wyn.nick = "Noname";
+            context.Wyniki.Add(wyn);
             NavigationService nav = NavigationService.GetNavigationService(this);
 
             nav.Navigate(new MenuPage());

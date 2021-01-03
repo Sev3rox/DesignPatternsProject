@@ -40,13 +40,13 @@
         <Image Width="320" Height="200" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="5" Source="Files/SklepLogo.png"></Image>
         <Image Width="110" Height="120" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5" Margin="5,5,5,0" Source="Files/MyShip.png"></Image>
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="5" Grid.Column="1">
-            <Label HorizontalAlignment="Center" Content="Twój Wynik: 999" Foreground="AntiqueWhite" Grid.Column="2" FontSize="20" FontWeight="Bold" Margin="65,8,15,8" Grid.Row="5" Grid.ColumnSpan="3">
+            <Label Name="Res" HorizontalAlignment="Center" Content="Twój Wynik:" Foreground="AntiqueWhite" Grid.Column="2" FontSize="20" FontWeight="Bold" Margin="65,8,15,8" Grid.Row="5" Grid.ColumnSpan="3">
             <Label.Background>
                 <ImageBrush ImageSource="/Files/SpaceBlue.jpg" />
             </Label.Background>
         </Label>
             <Image  Width="50" Height="50" Grid.Column="1" Grid.Row="2" Grid.RowSpan="3" Grid.ColumnSpan="5" Margin="30,5,5,10" Source="Files/Coin.png"></Image>
-            <Label Content="111" HorizontalAlignment="Center"  Foreground="AntiqueWhite" Grid.Column="2" FontSize="20" FontWeight="Bold" Margin="0,8,15,8" Grid.Row="5" Grid.ColumnSpan="3">
+            <Label Name="Mon" Content="111" HorizontalAlignment="Center"  Foreground="AntiqueWhite" Grid.Column="2" FontSize="20" FontWeight="Bold" Margin="0,8,15,8" Grid.Row="5" Grid.ColumnSpan="3">
                 <Label.Background>
                     <ImageBrush ImageSource="/Files/SpaceBlue.jpg" />
                 </Label.Background>

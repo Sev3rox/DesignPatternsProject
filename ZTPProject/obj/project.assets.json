@@ -1014,11 +1014,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProject\\ZTPProject\\ZTPProject.csproj",
+      "projectUniqueName": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProjectt\\ZTPProject\\ZTPProject.csproj",
       "projectName": "ZTPProject",
-      "projectPath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProject\\ZTPProject\\ZTPProject.csproj",
+      "projectPath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProjectt\\ZTPProject\\ZTPProject.csproj",
       "packagesPath": "C:\\Users\\mjsty\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProject\\ZTPProject\\obj\\",
+      "outputPath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProjectt\\ZTPProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mjsty\\AppData\\Roaming\\NuGet\\NuGet.Config",

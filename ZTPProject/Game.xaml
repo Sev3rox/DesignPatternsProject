@@ -5,10 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ZTPProject"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="600"
       Title="Game">
-
-    <Grid>
-        
+    <Page.Resources>
+        <Style x:Key="MyFocusVisualStyle">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle  Stroke="Transparent"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid Name="grid" Focusable="True" IsEnabled="True" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}">
+        <Canvas Name="canvas" Background="Transparent" Focusable="True" Width="600" Height="600" KeyDown="KeyEvent" PreviewKeyDown="KeyEvent"
+                 KeyUp="KeyEvent2" PreviewKeyUp="KeyEvent2" IsEnabled="True" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}">
+        </Canvas>
+        <Label  Foreground="#FF0A870A" FontWeight="Bold" Content="Label" Name="labe" HorizontalAlignment="Center" VerticalAlignment="Top" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}" Margin="131,10,131,0"  FontSize="32"/>
     </Grid>
 </Page>
