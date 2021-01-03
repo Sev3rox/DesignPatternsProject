@@ -6,8 +6,8 @@ namespace ZTPProject
 {
     interface Metoda
     {
-        void WykonajNaSingle() {; }
-        void WykonajNaTShot() {; }
-        void WykonajNaBigTShot() {; }
+        Object WykonajNaSingle(SingleShot shot);
+        Object WykonajNaTShot(TShot shot);
+        Object WykonajNaBigTShot(BigTShot shot);
     }
 }
