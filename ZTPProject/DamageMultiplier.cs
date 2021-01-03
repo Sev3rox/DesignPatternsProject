@@ -6,7 +6,8 @@ namespace ZTPProject
 {
     class DamageMultiplier : Bought
     {
-        override public float getDamage() { return this.getDamage() *1.5f; }
+        public DamageMultiplier(Player player1) { setPlayer(player1); }
+        override public float getDamage() { return this.getDamage() * 1.5f; }
         override public float getMoneyMultiplier() { return this.getMoneyMultiplier(); }
     }
 }

@@ -4,9 +4,11 @@ using System.Text;
 
 namespace ZTPProject
 {
-    abstract class Bought:Player
+    abstract class Bought : Player
     {
         private Player player;
+        public Player getPlayer() { return player; }
+        public void setPlayer(Player pla) { player = pla; }
         override abstract public float getDamage();
         override abstract public float getMoneyMultiplier();
         override public void setHealthPoints(int hp) { player.setHealthPoints(hp); }
