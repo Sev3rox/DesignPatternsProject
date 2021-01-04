@@ -18,14 +18,14 @@ namespace ZTPProject
     /// </summary>
     public partial class MenuPage : Page
     {
+        private DBConnection connection;
         private ZTPContext con;
         public MenuPage()
         {
             InitializeComponent();
-            DBConnection connection;
+            
             connection = DBConnection.GetInstance();
-            connection.CreateContext();
-            con = connection.GetContext();
+  
 
             /*  int i = 1;
               for (int j = 0; j < 10; j++)
@@ -42,13 +42,16 @@ namespace ZTPProject
 
         private void Wyniki(object sender, RoutedEventArgs e)
         {
+            if (connection.GetContext() == null)
+                connection.CreateContext();
+            con = connection.GetContext();
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new WynikiPage(con));
         }
         private void NowaGra(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Game());
+            nav.Navigate(new Game(connection));
         }
 
         private void Wyjście(object sender, RoutedEventArgs e)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 
 namespace ZTPProject
 {
@@ -8,8 +9,10 @@ namespace ZTPProject
     {
         public override EnemySpaceShip clone()
         {
+         
             return this;
-        }
+       
+    }
         public override void move()
         {
             throw new NotImplementedException();

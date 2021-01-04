@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ZTPProject
 {
-    class DBConnection
+    public class DBConnection
     {
 
         private ZTPContext context;

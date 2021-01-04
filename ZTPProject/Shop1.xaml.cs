@@ -20,11 +20,14 @@ namespace ZTPProject
     {
         ZTPContext context;
         int result;
-      
-        public Shop1(ZTPContext context, int result)
+        DBConnection connection;
+        public Shop1(DBConnection connection, int result)
         {
             InitializeComponent();
-            this.context = context;
+            if (connection.GetContext() == null)
+                connection.CreateContext();
+            this.connection = connection;
+            this.context = connection.GetContext();
             this.result = result;
             Res.Content = "Twój Wynik: " + result.ToString();
       
@@ -43,7 +46,7 @@ namespace ZTPProject
         private void Next(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Game());
+            nav.Navigate(new Game(connection));
         }
 
         private void Dmg(object sender, RoutedEventArgs e)

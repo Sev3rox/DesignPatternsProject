@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace ZTPProject
 {
@@ -23,6 +25,7 @@ namespace ZTPProject
             for(int i=0;i<l1;i++)
             {
                 EnemySpaceShip enS=enemyList[0].clone();
+               
                 Enemy en = new Enemy();
                 en.setEnemySpaceShip(enS);
                 lista.Add(en);

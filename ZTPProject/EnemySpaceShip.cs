@@ -21,9 +21,15 @@ namespace ZTPProject
         private int healthPoints;
         private int damage;
         private int money;
+        private Strategia strategia;
         private Image ima;
+        private String imgname;
+        public void setImgString(String imgname) { this.imgname = imgname; }
+        public String getImgString() { return imgname; }
         public void setImage(Image ima1) { ima = ima1; }
         public Image getImage() { return ima; }
+        public void setStrategia(Strategia str) { strategia=str; }
+        public Strategia getIStrategia() { return strategia; }
         public Point getPosition() { return position; }
         public void setPosition(Point pos) { position = pos; }
         public int getDamage() { return damage; }

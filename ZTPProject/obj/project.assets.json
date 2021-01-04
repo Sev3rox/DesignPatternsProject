@@ -1009,19 +1009,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mloteks71\\.nuget\\packages\\": {}
+    "C:\\Users\\mjsty\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mloteks71\\Desktop\\ZTP\\DesignPatternsProject\\ZTPProject\\ZTPProject.csproj",
+      "projectUniqueName": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProject\\ZTPProject\\ZTPProject.csproj",
       "projectName": "ZTPProject",
-      "projectPath": "C:\\Users\\Mloteks71\\Desktop\\ZTP\\DesignPatternsProject\\ZTPProject\\ZTPProject.csproj",
-      "packagesPath": "C:\\Users\\Mloteks71\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mloteks71\\Desktop\\ZTP\\DesignPatternsProject\\ZTPProject\\obj\\",
+      "projectPath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProject\\ZTPProject\\ZTPProject.csproj",
+      "packagesPath": "C:\\Users\\mjsty\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mjsty\\OneDrive\\Pulpit\\DesignPatternsProject\\ZTPProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mloteks71\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mjsty\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1072,7 +1072,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

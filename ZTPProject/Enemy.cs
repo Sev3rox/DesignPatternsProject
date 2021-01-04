@@ -22,14 +22,19 @@ namespace ZTPProject
         private EnemySpaceShip enemySpaceShip;
         private Strategia strategy;
         private int x;
-        public Enemy() { }
+        public Enemy() { ; }
 
           public override EnemySpaceShip getEnemySpaceShip() {return enemySpaceShip; }
-          public override void setEnemySpaceShip(EnemySpaceShip enship) {enemySpaceShip=enship; }
-        public override int getX() { return x; }
-        public override void  setX(int x) { this.x = x; }
+          public override void setEnemySpaceShip(EnemySpaceShip enship) {enemySpaceShip=enship;
 
-        public override void  Zmieństrategie(Strategia strategy) { this.strategy = strategy; }
+         }
+        public override int getX() { return x; }
+        public override void  setX(int x) { this.x = x;
+            this.strategy = enemySpaceShip.getIStrategia().DeepCopy();
+           
+        }
+
+        public override void  Zmieństrategie(Strategia strategy) { }
      public override void porusz() { strategy.Poruszanie(enemySpaceShip); }
 
 
