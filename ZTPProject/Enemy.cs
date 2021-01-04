@@ -31,7 +31,7 @@ namespace ZTPProject
         public override int getX() { return x; }
         public override void  setX(int x) { this.x = x;
             this.strategy = enemySpaceShip.getIStrategia().DeepCopy();
-           
+
         }
 
         public override void  Zmieństrategie(Strategia strategy) { }

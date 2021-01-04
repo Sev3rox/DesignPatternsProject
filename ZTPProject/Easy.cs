@@ -28,6 +28,7 @@ namespace ZTPProject
                
                 Enemy en = new Enemy();
                 en.setEnemySpaceShip(enS);
+               
                 lista.Add(en);
             }
             for (int i = 0; i < l2; i++)

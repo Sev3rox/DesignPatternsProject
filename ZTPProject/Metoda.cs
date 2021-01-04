@@ -12,7 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace ZTPProject
+ namespace ZTPProject
 {
     interface Metoda
     {

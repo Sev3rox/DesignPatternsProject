@@ -41,6 +41,7 @@ namespace ZTPProject
         private bool isEnemy = false;
         private EnemysIterator iter;
         private int result;
+        private int killed;
         private DBConnection connection;
         public Game(DBConnection connection)
         {
@@ -109,7 +110,7 @@ namespace ZTPProject
         private void SetTimer3()
         {
             cTimer.Tick += OnTimedEvent3;
-            cTimer.Interval = new TimeSpan(0, 0, 0, 0, 50);
+            cTimer.Interval = new TimeSpan(0, 0, 0, 0, 10);
             cTimer.Start();
         }
         private void SetTimer4()
@@ -158,14 +159,14 @@ namespace ZTPProject
                     bi1.EndInit();
                     ima.Source = bi1;
                     en.getEnemySpaceShip().setImage(ima);
-           
+
                     //canvas.Children.Remove(ima);
                     canvas.Children.Add(ima);
-                    Canvas.SetLeft(ima,  en.getX()*80);
-                    Canvas.SetTop(ima,  0);
+                    Canvas.SetLeft(ima, en.getX() * 80);
+                    Canvas.SetTop(ima, 0);
                     incombat.Add(en);
                 }
-                else
+                else if (killed == 20)
                 {
                     NavigationService nav = NavigationService.GetNavigationService(this);
                     nav.Navigate(new Shop1(connection,result));
@@ -182,14 +183,45 @@ namespace ZTPProject
 
         public async void OnTimedEvent4(Object source, EventArgs e)
         {
-          
+            var x = canvas.Height;
+           
             if (incombat.Count > 0)
             {
-                foreach (Enemy enmove in incombat)
+                int j = incombat.Count;
+                for (int i = j-1; i >=0; i--)
                 {
-            
-                    enmove.porusz();
+                    incombat[i].porusz();
+                    if (incombat[i].getEnemySpaceShip().getMoney() == 1)
+                    {
+                        Image img = incombat[i].getEnemySpaceShip().getImage();
+                        Point p1 = new Point();
+                        var p1y = Canvas.GetTop(img);
+                        var p1x = Canvas.GetLeft(img);
+                        var p2y = img.ActualHeight + p1y;
+                        var p2x = img.ActualWidth + p1x;
+                        var pl1y = Canvas.GetTop(ima1);
+                        var pl1x = Canvas.GetLeft(ima1);
+                        var pl2y = ima1.ActualHeight + pl1y;
+                        var pl2x = ima1.ActualWidth + pl1x;
+                        if (p2y >= pl1y && p1x <= pl2x && p1x >= pl1x || p2y >= pl1y && p2x <= pl2x && p2x >= pl1x)
+                        {
+                            incombat.Remove(incombat[i]);
+                            canvas.Children.Remove(img);
+                            killed++;
+                            //bez pointow i hajsu
+                            //dmg tu i spradzanie czy endgame
+                        }
+                        if (Canvas.GetTop(img) >= canvas.ActualHeight)
+                        {
+                            incombat.Remove(incombat[i]);
+                            canvas.Children.Remove(img);
+                            killed++;
+                        }
+                    }
+
                 }
+                
+               
             }
         }
         private async void KeyEvent(object sender, System.Windows.Input.KeyEventArgs e)

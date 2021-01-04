@@ -14,7 +14,7 @@ using System.Windows.Threading;
 
 namespace ZTPProject
 {
-    abstract class IShot
+  abstract class IShot
     {
         private Point position;
         private Image ima;
