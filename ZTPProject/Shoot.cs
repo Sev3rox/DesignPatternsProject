@@ -14,7 +14,7 @@ using System.Windows.Threading;
 
 namespace ZTPProject
 {
-    class Shoot
+    class Shoot:Metoda
     {
         private Image ima1;
         public Object WykonajNaSingle(SingleShot shot,Canvas canvas) {

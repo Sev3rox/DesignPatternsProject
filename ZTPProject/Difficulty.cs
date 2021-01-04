@@ -6,7 +6,8 @@ namespace ZTPProject
 {
     abstract class Difficulty
     {
-        abstract public List<EnemySpaceShip> enemyGenerate(EnemySpaceShip[] EnemyList);
-        abstract public int getMoneyMultiplier();
+        abstract public EnemyList enemyGenerate(EnemySpaceShip[] EnemyList);
+        abstract public double getMoneyMultiplier();
+        abstract public double getScoreMultiplier();
     }
 }

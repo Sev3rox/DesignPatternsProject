@@ -69,7 +69,7 @@ namespace ZTPProject {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ZTPProject;V1.0.0.0;component/lose.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ZTPProject;component/lose.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Lose.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -10,13 +10,14 @@ namespace ZTPProject
         public Player getPlayer() { return player; }
         public void setPlayer(Player pla) { player = pla; }
         override abstract public float getDamage();
-        override abstract public float getMoneyMultiplier();
+        override abstract public double getMoneyMultiplier();
         override public void setHealthPoints(int hp) { player.setHealthPoints(hp); }
         override public int getHealthPoints() { return player.getHealthPoints(); }
         override public void setPosition(Point pos) { player.setPosition(pos); }
         override public Point getPosition() { return player.getPosition(); }
         override public int getMoney() { return player.getMoney(); }
         override public void setMoney(int mon) { player.setMoney(mon); }
+        override public void setMoneyMultiplier(double mon) { player.setMoneyMultiplier(mon); }
 
     }
 }

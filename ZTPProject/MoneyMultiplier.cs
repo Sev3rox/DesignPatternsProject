@@ -8,6 +8,6 @@ namespace ZTPProject
     {
         public MoneyMultiplier(Player player1) { setPlayer(player1); }
         override public float getDamage() { return this.getDamage(); }
-        override public float getMoneyMultiplier() { return this.getMoneyMultiplier() * 1.5f; }
+        override public double getMoneyMultiplier() { return this.getMoneyMultiplier() * 1.5; }
     }
 }

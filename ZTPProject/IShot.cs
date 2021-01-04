@@ -23,6 +23,6 @@ namespace ZTPProject
         public void setPosition(Point pos) { position = pos; }
         public Image getImage() { return ima; }
         public void setImage(Image ima1) { ima = ima1; }
-        abstract public Object wykonaj(Metoda met);
+        abstract public Object wykonaj(Metoda metoda,Canvas canvas);
     }
 }

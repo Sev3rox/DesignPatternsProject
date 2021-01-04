@@ -1,6 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Windows.Threading;
+
 
 namespace ZTPProject
 {
@@ -10,6 +21,9 @@ namespace ZTPProject
         private int healthPoints;
         private int damage;
         private int money;
+        private Image ima;
+        public void setImage(Image ima1) { ima = ima1; }
+        public Image getImage() { return ima; }
         public Point getPosition() { return position; }
         public void setPosition(Point pos) { position = pos; }
         public int getDamage() { return damage; }
@@ -21,7 +35,7 @@ namespace ZTPProject
 
         public void shoot() {; }
         public void addIShot(IShot iSht) {; }
-        public abstract void clone();
+        public abstract EnemySpaceShip clone();
         public abstract void move();
     }
 }

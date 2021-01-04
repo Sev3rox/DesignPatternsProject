@@ -8,6 +8,6 @@ namespace ZTPProject
     {
         public FlatDamageBonus(Player player1) { setPlayer(player1); }
         override public float getDamage() { return this.getDamage() + 1.0f; }
-        override public float getMoneyMultiplier() { return this.getMoneyMultiplier(); }
+        override public double getMoneyMultiplier() { return this.getMoneyMultiplier(); }
     }
 }

@@ -32,6 +32,9 @@ namespace ZTPProject
     class EnemyList : IList
     {
         private List<Enemy> Enemies;
+        public EnemyList(List<Enemy> list) { Enemies = list; }
+        public void setEnemies(List<Enemy> list) { Enemies = list; }
+        public List<Enemy> GetEnemies() { return Enemies; }
         public override Iterator CreateIterator() { return new EnemysIterator(Enemies); }
     }
 }
