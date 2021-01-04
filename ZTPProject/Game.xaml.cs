@@ -48,10 +48,14 @@ namespace ZTPProject
             bi1.EndInit();
             ima1.Source = bi1;
             canvas.Children.Add(ima1);
-            Canvas.SetLeft(ima1, 200);
-            Canvas.SetTop(ima1, 300);
+            double a = canvas.ActualWidth;
+            double b = ima1.Width;
+            double c = canvas.ActualHeight;
+            double d = ima1.Height;
+            Canvas.SetLeft(ima1, canvas.Width/2-80);//139
+            Canvas.SetTop(ima1, canvas.Height-129);//129
             Loaded += (xx, yy) => Keyboard.Focus(grid);
-            enemys = difficulty.enemyGenerate(org);
+            
             player.setMoneyMultiplier(difficulty.getMoneyMultiplier());
             scoreMultiplier = difficulty.getScoreMultiplier();
             org[0] = new NormalEnemySS();
@@ -63,7 +67,8 @@ namespace ZTPProject
             org[3] = new BestEnemySS();
             set(org[3], 4, 3, 3, "Enemy4");
             org[4] = new BestestEnemySS();
-            set(org[5], 10, 30, 3, "Enemy5");
+            set(org[4], 10, 30, 3, "Enemy5");
+            enemys = difficulty.enemyGenerate(org);
         }
         private void set(EnemySpaceShip ss,int Money,int HP, int Damage,string plik)
         {
@@ -76,9 +81,9 @@ namespace ZTPProject
             };
             BitmapImage bi2 = new BitmapImage();
             bi2.BeginInit();
-            bi2.UriSource = new Uri("/ Files /"+plik, UriKind.Relative);
+            bi2.UriSource = new Uri("/Files/"+plik, UriKind.Relative);
             bi2.EndInit();
-            ima1.Source = bi2;
+            ima2.Source = bi2;
             ss.setImage(ima2);
         }
         private void SetTimer()
@@ -108,13 +113,14 @@ namespace ZTPProject
         public async void OnTimedEvent(Object source, EventArgs e)
         {
             aTimer.Interval = new TimeSpan(0, 0, 0, 0, 10);
+            if((Canvas.GetLeft(ima1)+5*mov>0&&mov<0)|| (Canvas.GetLeft(ima1) + 5 * mov<canvas.Width-160)&&mov>0)
             Canvas.SetLeft(ima1, Canvas.GetLeft(ima1) + 5 * mov);
         }
         public async void OnTimedEvent2(Object source, EventArgs e)
         {
             if (cooldown > 0) cooldown--;
             foreach (Image im in self)
-            { Canvas.SetTop(im, Canvas.GetTop(im) - 3); labe.Content = Canvas.GetTop(im) - 3; }
+            { Canvas.SetTop(im, Canvas.GetTop(im) - 5); labe.Content = Canvas.GetTop(im) - 5; }
         }
         public async void OnTimedEvent3(Object source, EventArgs e)
         {
@@ -153,7 +159,7 @@ namespace ZTPProject
                         Canvas.SetLeft(ima, Canvas.GetLeft(ima1) + 60);
                         Canvas.SetTop(ima, Canvas.GetTop(ima1) - 100);
                         self.Add(ima);
-                        cooldown = 100;
+                        cooldown = 10;
                     }
                     break;
 
