@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ZTPProject
 {
-    abstract class Player
+    public abstract class Player
     {
         abstract public float getDamage();
         abstract public double getMoneyMultiplier();

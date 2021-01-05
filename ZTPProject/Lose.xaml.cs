@@ -19,11 +19,15 @@ namespace ZTPProject
     public partial class Lose : Page
     {
         ZTPContext context;
-        int result;
-        public Lose(ZTPContext context, int result)
+        DBConnection connection;
+        double result;
+        public Lose(DBConnection connection, double result)
         {
             InitializeComponent();
-            this.context = context;
+            if (connection.GetContext() == null)
+                connection.CreateContext();
+            this.connection = connection;
+            this.context = connection.GetContext();
             this.result = result;
             Res.Content = "Twój Wynik: " + result.ToString();
 
@@ -36,8 +40,9 @@ namespace ZTPProject
             if (text.Text != "")
                 wyn.nick = text.Text;
             else
-                wyn.nick = "Noname";
+                wyn.nick = "NoName";
             context.Wyniki.Add(wyn);
+            context.SaveChanges();
             NavigationService nav = NavigationService.GetNavigationService(this);
 
             nav.Navigate(new MenuPage());

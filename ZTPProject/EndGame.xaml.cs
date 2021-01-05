@@ -19,11 +19,15 @@ namespace ZTPProject
     public partial class EndGame : Page
     {
         ZTPContext context;
-        int result;
-        public EndGame(ZTPContext context,int result)
+        DBConnection connection;
+        double result;
+        public EndGame(DBConnection connection, double result)
         {
             InitializeComponent();
-            this.context = context;
+            if (connection.GetContext() == null)
+                connection.CreateContext();
+            this.connection = connection;
+            this.context = connection.GetContext();
             this.result = result;
             Res.Content = "Twój Wynik: " + result.ToString();
         }
@@ -37,6 +41,7 @@ namespace ZTPProject
             else
             wyn.nick = "Noname";
             context.Wyniki.Add(wyn);
+            context.SaveChanges();
             NavigationService nav = NavigationService.GetNavigationService(this);
 
             nav.Navigate(new MenuPage());

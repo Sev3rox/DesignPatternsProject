@@ -47,6 +47,11 @@ namespace ZTPProject
         {
             InitializeComponent();
             //snake = new Snakee(x, y);
+            imgspace.ImageSource = new BitmapImage(new Uri("../../../Files/SpaceLightBlue.jpg", UriKind.Relative));
+           //imgspace.ImageSource = new BitmapImage(new Uri("../../../Files/SpaceBlue.jpg", UriKind.Relative));
+          //imgspace.ImageSource = new BitmapImage(new Uri("../../../Files/Space.jpg", UriKind.Relative));
+
+
             this.connection = connection;
             SetTimer();
             SetTimer2();
@@ -85,6 +90,9 @@ namespace ZTPProject
             enemys = difficulty.enemyGenerate(org);
             player.setHealthPoints(1);
             iter = (EnemysIterator)enemys.CreateIterator();
+            xmlhp.Content = player.getHealthPoints();
+            xmlmoney.Content = player.getMoney();
+            xmlresult.Content = "Wynik: " + result;
         }
         private void set(EnemySpaceShip ss,int Money,int HP, int Damage,string plik,Strategia str)
         {
@@ -110,7 +118,7 @@ namespace ZTPProject
         private void SetTimer3()
         {
             cTimer.Tick += OnTimedEvent3;
-            cTimer.Interval = new TimeSpan(0, 0, 0, 0, 10);
+            cTimer.Interval = new TimeSpan(0, 0, 0, 0, 20);
             cTimer.Start();
         }
         private void SetTimer4()
@@ -130,7 +138,7 @@ namespace ZTPProject
         public async void OnTimedEvent(Object source, EventArgs e)
         {
             aTimer.Interval = new TimeSpan(0, 0, 0, 0, 10);
-            if((Canvas.GetLeft(ima1)+5*mov>0&&mov<0)|| (Canvas.GetLeft(ima1) + 5 * mov<canvas.Width-160)&&mov>0)
+            if((Canvas.GetLeft(ima1)+5*mov>0&&mov<0)|| (Canvas.GetLeft(ima1) + 5 * mov<canvas.Width-100)&&mov>0)
             Canvas.SetLeft(ima1, Canvas.GetLeft(ima1) + 5 * mov);
         }
         public async void OnTimedEvent2(Object source, EventArgs e)
@@ -168,6 +176,7 @@ namespace ZTPProject
                         if(check==1)
                         {
                             en.getEnemySpaceShip().setHealthPoints(en.getEnemySpaceShip().getHealthPoints() - player.getDamage());
+                          
                         }
                         if (en.getEnemySpaceShip().getHealthPoints() < 0)
                         {
@@ -176,6 +185,9 @@ namespace ZTPProject
                             killed++;
                             player.setMoney(player.getMoney() + en.getEnemySpaceShip().getMoney() * difficulty.getMoneyMultiplier() * player.getMoneyMultiplier());
                             result += en.getEnemySpaceShip().getMoney() * difficulty.getScoreMultiplier();
+                            xmlresult.Content = "Wynik: "+result;
+                            xmlmoney.Content = player.getMoney();
+                          
                         }
                     }
                 }
@@ -209,9 +221,9 @@ namespace ZTPProject
                     incombat.Add(en);
                 }
                 else if (killed == 20)
-                {
+                {   /// tu if do engame jak jestesmy na hard;
                     NavigationService nav = NavigationService.GetNavigationService(this);
-                    nav.Navigate(new Shop1(connection,result));
+                    nav.Navigate(new Shop1(connection,result,player));
                     this.aTimer.Stop();
                     this.bTimer.Stop();
                     this.cTimer.Stop();
@@ -247,17 +259,20 @@ namespace ZTPProject
                         var pl2x = ima1.ActualWidth + pl1x;
                         if (p2y >= pl1y && p1x <= pl2x && p1x >= pl1x || p2y >= pl1y && p2x <= pl2x && p2x >= pl1x)
                         {
-                            incombat.Remove(incombat[i]);
+                           
                             canvas.Children.Remove(img);
                             killed++;
                             //bez pointow i hajsu
                             player.setHealthPoints(player.getHealthPoints() - incombat[i].getEnemySpaceShip().getDamage());
+                            xmlhp.Content = player.getHealthPoints();
+                            incombat.Remove(incombat[i]);
                         }
                         if (Canvas.GetTop(img) >= canvas.ActualHeight)
                         {
                             incombat.Remove(incombat[i]);
                             canvas.Children.Remove(img);
                             killed++;
+                            
                         }
                     }
 
@@ -266,7 +281,7 @@ namespace ZTPProject
                 if (player.getHealthPoints() <= 0)
                 {
                     NavigationService nav = NavigationService.GetNavigationService(this);
-                    nav.Navigate(new Shop1(connection, result));
+                    nav.Navigate(new Lose(connection, result));
                     this.aTimer.Stop();
                     this.bTimer.Stop();
                     this.cTimer.Stop();

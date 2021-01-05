@@ -41,6 +41,13 @@ namespace ZTPProject
                 en.setEnemySpaceShip(enS);
                 lista.Add(en);
             }
+            for (int i = 0; i < 1; i++)
+            {
+                EnemySpaceShip enS = enemyList[4].clone();
+                Enemy en = new Enemy();
+                en.setEnemySpaceShip(enS);
+                lista.Add(en);
+            }
             return new EnemyList(lista);
         }
     }

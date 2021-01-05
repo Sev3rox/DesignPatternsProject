@@ -12,12 +12,22 @@ namespace ZTPProject
 
     class EnemysIterator : Iterator
     {
-        private int pos=0;
+        private Random rnd = new Random();
         private List<Enemy> Enemies;
         public EnemysIterator(List<Enemy> Enemies) { this.Enemies = Enemies; }
-        public override Object Next() { return Enemies[pos++]; }
+        public override Object Next() {
+            if (Enemies.Count > 1)
+            {
+                var index = rnd.Next(0, Enemies.Count-1);
+                Enemy enemy = Enemies[index];
+                Enemies.Remove(enemy);
+                return enemy;
+            }
+            else 
+                return Enemies[0];
+        }
         public override bool hasNext(){
-            if (pos+1==Enemies.Count)
+            if (Enemies.Count<=0)
                 return false;
             else
                 return true;

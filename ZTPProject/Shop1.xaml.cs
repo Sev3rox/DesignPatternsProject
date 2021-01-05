@@ -21,7 +21,8 @@ namespace ZTPProject
         ZTPContext context;
         double result;
         DBConnection connection;
-        public Shop1(DBConnection connection, double result)
+        Player player;
+        public Shop1(DBConnection connection, double result,Player player)
         {
             InitializeComponent();
             if (connection.GetContext() == null)
@@ -29,16 +30,25 @@ namespace ZTPProject
             this.connection = connection;
             this.context = connection.GetContext();
             this.result = result;
+            this.player = player;
+            Mon.Content = player.getMoney();
             Res.Content = "Twój Wynik: " + result.ToString();
-      
-
+            Hp.Content = player.getHealthPoints();
         }
 
     
 
         private void Save(object sender, RoutedEventArgs e)
         {
-
+            StanGry save = new StanGry();
+            save.dmg  = player.getDamage();
+            save.hp = player.getHealthPoints();
+            save.lvl = 0;   /////////////////////////////////Tu kot zmien bo idk jak bedziesz robil
+            save.money = player.getMoney();
+            save.MoneyP = player.getMoneyMultiplier();
+            save.result = result;
+            context.StanyGry.Add(save);
+            context.SaveChanges();
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new MenuPage());
         }
