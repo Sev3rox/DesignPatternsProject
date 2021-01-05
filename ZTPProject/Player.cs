@@ -12,8 +12,8 @@ namespace ZTPProject
         abstract public int getHealthPoints();
         abstract public void setPosition(Point pos);
         abstract public Point getPosition();
-        abstract public int getMoney();
-        abstract public void setMoney(int mon);
+        abstract public double getMoney();
+        abstract public void setMoney(double mon);
         abstract public void setMoneyMultiplier(double mon);
 
     }

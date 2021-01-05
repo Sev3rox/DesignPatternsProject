@@ -40,7 +40,7 @@ namespace ZTPProject
         private int buffor;
         private bool isEnemy = false;
         private EnemysIterator iter;
-        private int result;
+        private double result;
         private int killed;
         private DBConnection connection;
         public Game(DBConnection connection)
@@ -66,8 +66,8 @@ namespace ZTPProject
             double b = ima1.Width;
             double c = canvas.ActualHeight;
             double d = ima1.Height;
-            Canvas.SetLeft(ima1, canvas.Width/2-80);//139
-            Canvas.SetTop(ima1, canvas.Height-129);//129
+            Canvas.SetLeft(ima1, canvas.Width/2-49);//139
+            Canvas.SetTop(ima1, canvas.Height-84);//129
             Loaded += (xx, yy) => Keyboard.Focus(grid);
             
             player.setMoneyMultiplier(difficulty.getMoneyMultiplier());
@@ -83,7 +83,7 @@ namespace ZTPProject
             org[4] = new BestestEnemySS();
             set(org[4], 10, 30, 3, "Boss.png", new PoosiX());
             enemys = difficulty.enemyGenerate(org);
-
+            player.setHealthPoints(1);
             iter = (EnemysIterator)enemys.CreateIterator();
         }
         private void set(EnemySpaceShip ss,int Money,int HP, int Damage,string plik,Strategia str)
@@ -136,8 +136,50 @@ namespace ZTPProject
         public async void OnTimedEvent2(Object source, EventArgs e)
         {
             if (cooldown > 0) cooldown--;
-            foreach (Image im in self)
-            { Canvas.SetTop(im, Canvas.GetTop(im) - 5); labe.Content = Canvas.GetTop(im) - 5; }
+            for(int i=0;i<self.Count;i++)
+            {
+                Image im = self[i];
+                Canvas.SetTop(im, Canvas.GetTop(im) - 5); labe.Content = Canvas.GetTop(im) - 5;
+                for(int j=0;j<incombat.Count;j++)
+                {
+                    Enemy en = incombat[j];
+                    Image img = en.getEnemySpaceShip().getImage();
+                    var p1y = Canvas.GetTop(im);//a
+                    var p1x = Canvas.GetLeft(im);//b
+                    var p2y = im.ActualHeight + p1y;//c
+                    var p2x = im.ActualWidth + p1x;//d
+                    var pl1y = Canvas.GetTop(img);//e
+                    var pl1x = Canvas.GetLeft(img);//f
+                    var pl2y = img.ActualHeight + pl1y;//g
+                    var pl2x = img.ActualWidth + pl1x;//h
+                    if (((p1y <= pl2y && p1y >= pl1y) || (p2y <= pl2y && p2y >= pl1y)) && ((p1x <= pl2x && p1x >= pl1x) || (p2x <= pl2x && p2x >= pl1x)))
+                    {
+                        
+                        canvas.Children.Remove(im);
+                        self.Remove(im);
+                        int check = 1;
+                        if (en.getEnemySpaceShip().GetType() is BestEnemySS)
+                        {
+                            if (((BestEnemySS)en.getEnemySpaceShip()).getShield() == true)
+                            {
+                                ((BestEnemySS)en.getEnemySpaceShip()).setShield(false); check = 0;
+                            }
+                        }
+                        if(check==1)
+                        {
+                            en.getEnemySpaceShip().setHealthPoints(en.getEnemySpaceShip().getHealthPoints() - player.getDamage());
+                        }
+                        if (en.getEnemySpaceShip().getHealthPoints() < 0)
+                        {
+                            incombat.Remove(en);
+                            canvas.Children.Remove(en.getEnemySpaceShip().getImage());
+                            killed++;
+                            player.setMoney(player.getMoney() + en.getEnemySpaceShip().getMoney() * difficulty.getMoneyMultiplier() * player.getMoneyMultiplier());
+                            result += en.getEnemySpaceShip().getMoney() * difficulty.getScoreMultiplier();
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -209,7 +251,7 @@ namespace ZTPProject
                             canvas.Children.Remove(img);
                             killed++;
                             //bez pointow i hajsu
-                            //dmg tu i spradzanie czy endgame
+                            player.setHealthPoints(player.getHealthPoints() - incombat[i].getEnemySpaceShip().getDamage());
                         }
                         if (Canvas.GetTop(img) >= canvas.ActualHeight)
                         {
@@ -220,8 +262,16 @@ namespace ZTPProject
                     }
 
                 }
-                
-               
+
+                if (player.getHealthPoints() <= 0)
+                {
+                    NavigationService nav = NavigationService.GetNavigationService(this);
+                    nav.Navigate(new Shop1(connection, result));
+                    this.aTimer.Stop();
+                    this.bTimer.Stop();
+                    this.cTimer.Stop();
+                    this.dTimer.Stop();
+                }
             }
         }
         private async void KeyEvent(object sender, System.Windows.Input.KeyEventArgs e)
@@ -250,12 +300,12 @@ namespace ZTPProject
                         };
                         BitmapImage bi1 = new BitmapImage();
                         bi1.BeginInit();
-                        bi1.UriSource = new Uri("/Files/MYship.png", UriKind.Relative);
+                        bi1.UriSource = new Uri("/Files/Shot.png", UriKind.Relative);
                         bi1.EndInit();
                         ima.Source = bi1;
                         canvas.Children.Add(ima);
-                        Canvas.SetLeft(ima, Canvas.GetLeft(ima1) + 60);
-                        Canvas.SetTop(ima, Canvas.GetTop(ima1) - 100);
+                        Canvas.SetLeft(ima, Canvas.GetLeft(ima1) + 38);
+                        Canvas.SetTop(ima, Canvas.GetTop(ima1) - 32);
                         self.Add(ima);
                         cooldown = 10;
                     }

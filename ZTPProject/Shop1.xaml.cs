@@ -19,9 +19,9 @@ namespace ZTPProject
     public partial class Shop1 : Page
     {
         ZTPContext context;
-        int result;
+        double result;
         DBConnection connection;
-        public Shop1(DBConnection connection, int result)
+        public Shop1(DBConnection connection, double result)
         {
             InitializeComponent();
             if (connection.GetContext() == null)

@@ -8,7 +8,7 @@ namespace ZTPProject
     {
         private int healthPoints;
         private Point position;
-        private int money;
+        private double money;
         private double moneyMultiplier;
         override public float getDamage() { return 1; }
         override public double getMoneyMultiplier() { return moneyMultiplier; }
@@ -16,8 +16,8 @@ namespace ZTPProject
         override public int getHealthPoints() { return healthPoints; }
         override public void setPosition(Point pos) { position = pos; }
         override public Point getPosition() { return position; }
-        override public int getMoney() { return money; }
-        override public void setMoney(int mon) { money = mon; }
+        override public double getMoney() { return money; }
+        override public void setMoney(double mon) { money = mon; }
         override public void setMoneyMultiplier(double mon) { moneyMultiplier = mon; }
     }
 }

@@ -18,7 +18,7 @@ namespace ZTPProject
     abstract class EnemySpaceShip
     {
         private Point position;
-        private int healthPoints;
+        private float healthPoints;
         private int damage;
         private int money;
         private Strategia strategia;
@@ -36,8 +36,8 @@ namespace ZTPProject
         public void setDamage(int dam) { damage = dam; }
         public int getMoney() { return money; }
         public void setMoney(int mon) { money=mon; }
-        public int getHealthPoints() { return healthPoints; }
-        public void setHealthPoints(int HP) { healthPoints=HP; }
+        public float getHealthPoints() { return healthPoints; }
+        public void setHealthPoints(float HP) { healthPoints=HP; }
 
         public void shoot() {; }
         public void addIShot(IShot iSht) {; }

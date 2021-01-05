@@ -343,3 +343,4 @@ C:\Users\mjsty\OneDrive\Pulpit\Nowy folder\DesignPatternsProject\ZTPProject\obj\
 C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\ZTPProject.csprojAssemblyReference.cache
 C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\mjsty\OneDrive\Pulpit\DesignPatternsProject\ZTPProject\obj\Debug\netcoreapp3.1\ZTPProject.csproj.CoreCompileInputs.cache
+C:\Users\Mloteks71\Desktop\ZTP\DesignPatternsProject\ZTPProject\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

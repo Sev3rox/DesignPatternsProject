@@ -16,6 +16,7 @@
     <None Remove="Files\Enemy4.png" />
     <None Remove="Files\LoseLogo.png" />
     <None Remove="Files\MYship.png" />
+    <None Remove="Files\Shot.png" />
     <None Remove="Files\SklepLogo.png" />
     <None Remove="Files\Space.jpg" />
     <None Remove="Files\SpaceBlue.jpg" />
@@ -39,6 +40,7 @@
     <Resource Include="Files\Enemy4.png" />
     <Resource Include="Files\LoseLogo.png" />
     <Resource Include="Files\MYship.png" />
+    <Resource Include="Files\Shot.png" />
     <Resource Include="Files\SklepLogo.png" />
     <Resource Include="Files\Space.jpg" />
     <Resource Include="Files\SpaceBlue.jpg" />
