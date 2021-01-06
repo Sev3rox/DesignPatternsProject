@@ -24,6 +24,9 @@ namespace ZTPProject
         private Strategia strategia;
         private Image ima;
         private String imgname;
+        private int cd;
+        public void setCD(int newcd) { cd = newcd; }
+        public int getCD() { return cd; }
         public void setImgString(String imgname) { this.imgname = imgname; }
         public String getImgString() { return imgname; }
         public void setImage(Image ima1) { ima = ima1; }
@@ -39,7 +42,7 @@ namespace ZTPProject
         public float getHealthPoints() { return healthPoints; }
         public void setHealthPoints(float HP) { healthPoints=HP; }
 
-        public void shoot() {; }
+        public virtual List<IShot> shoot(List<IShot> list, Canvas canvas) {return list; }
         public void addIShot(IShot iSht) {; }
         public abstract EnemySpaceShip clone();
         public abstract void move();

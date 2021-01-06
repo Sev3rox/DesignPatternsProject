@@ -16,6 +16,6 @@ namespace ZTPProject
 {
     class BigTShot: IShot
     {
-        override public Object wykonaj(Metoda m,Canvas canvas) { return m.WykonajNaBigTShot(this,canvas); }
+        override public Object wykonaj(Metoda m,Canvas canvas, Object ob = null) { return m.WykonajNaBigTShot(this,canvas,ob); }
     }
 }

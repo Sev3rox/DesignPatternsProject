@@ -18,11 +18,14 @@ namespace ZTPProject
     {
         private Point position;
         private Image ima;
+        private int damage;
+        public void setDamage(int i) { damage = i; }
+        public int getDamage() { return damage; }
 
         public Point getPosition() { return position; }
         public void setPosition(Point pos) { position = pos; }
         public Image getImage() { return ima; }
         public void setImage(Image ima1) { ima = ima1; }
-        abstract public Object wykonaj(Metoda metoda,Canvas canvas);
+        abstract public Object wykonaj(Metoda metoda,Canvas canvas,Object ob=null);
     }
 }

@@ -16,7 +16,7 @@ namespace ZTPProject
         }
         public override EnemyList enemyGenerate(EnemySpaceShip[] enemyList)
         {
-            int l1 = 6;
+            int l1 = 7;
             int l2 = 6;
             int l3 = 6;
             List<Enemy> lista = new List<Enemy>();

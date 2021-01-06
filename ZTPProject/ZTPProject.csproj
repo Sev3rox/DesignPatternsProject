@@ -23,6 +23,7 @@
     <None Remove="Files\SpaceBlue.jpg" />
     <None Remove="Files\SpaceLightBlue.jpg" />
     <None Remove="Files\top10.png" />
+    <None Remove="Files\TShot.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,6 +52,7 @@
     <Resource Include="Files\SpaceBlue.jpg" />
     <Resource Include="Files\SpaceLightBlue.jpg" />
     <Resource Include="Files\top10.png" />
+    <Resource Include="Files\TShot.png" />
   </ItemGroup>
 
 </Project>

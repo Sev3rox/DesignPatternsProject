@@ -6,14 +6,14 @@ namespace ZTPProject
 {
    public class Point
     {
-        private int x;
-        private int y;
+        private double x;
+        private double y;
         public Point() { }
-        public Point(int xx,int yy) { x = xx;y = yy; }
+        public Point(double xx,double yy) { x = xx;y = yy; }
 
-        public int getX() { return x; }
-        public void setX(int xx) { x = xx; }
-        public int getY() { return y; }
-        public void setY(int yy) { y = yy; }
+        public double getX() { return x; }
+        public void setX(double xx) { x = xx; }
+        public double getY() { return y; }
+        public void setY(double yy) { y = yy; }
     }
 }

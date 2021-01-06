@@ -20,7 +20,7 @@ namespace ZTPProject
         public Boolean getShield() { return shield; }
         public void setShield(Boolean b) { shield = b; }
         public BestEnemySS() {; }
-        public BestEnemySS(BestEnemySS ss) { this.setPosition(ss.getPosition()); this.setHealthPoints(ss.getHealthPoints()); this.setDamage(ss.getDamage()); this.setMoney(ss.getMoney()); this.setStrategia(ss.getIStrategia()); this.setImage(ss.getImage()); this.setImgString(ss.getImgString()); }
+        public BestEnemySS(BestEnemySS ss) { this.setCD(ss.getCD()); this.setPosition(ss.getPosition()); this.setHealthPoints(ss.getHealthPoints()); this.setDamage(ss.getDamage()); this.setMoney(ss.getMoney()); this.setStrategia(ss.getIStrategia()); this.setImage(ss.getImage()); this.setImgString(ss.getImgString()); }
 
         public override EnemySpaceShip clone()
         {
@@ -32,12 +32,18 @@ namespace ZTPProject
         {
             throw new NotImplementedException();
         }
-        public void shot(List<IShot> list, Canvas canvas)
+        override public List<IShot> shoot(List<IShot> list, Canvas canvas)
         {
-            IShot tShot = new TShot();
-            tShot.setPosition(this.getPosition());
+            IShot single = new TShot();
+            Point pos = new Point();
+            pos.setY(Canvas.GetTop(this.getImage()) + 65);
+            pos.setX(Canvas.GetLeft(this.getImage()) + 38);
+            single.setPosition(pos);
             Metoda shoot = new Shoot();
-            tShot.setImage((Image)tShot.wykonaj(shoot, canvas));
+            single.setImage((Image)single.wykonaj(shoot, canvas));
+            single.setDamage(3);
+            list.Add(single);
+            return list;
         }
     }
 }

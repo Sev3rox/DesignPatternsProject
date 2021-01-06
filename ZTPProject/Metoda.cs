@@ -16,8 +16,8 @@ using System.Windows.Threading;
 {
     interface Metoda
     {
-        Object WykonajNaSingle(SingleShot shot,Canvas canvas);
-        Object WykonajNaTShot(TShot shot, Canvas canvas);
-        Object WykonajNaBigTShot(BigTShot shot, Canvas canvas);
+        Object WykonajNaSingle(SingleShot shot,Canvas canvas,Object ob=null);
+        Object WykonajNaTShot(TShot shot, Canvas canvas, Object ob=null);
+        Object WykonajNaBigTShot(BigTShot shot, Canvas canvas, Object ob=null);
     }
 }

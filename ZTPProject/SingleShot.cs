@@ -15,6 +15,6 @@ namespace ZTPProject
 {
     class SingleShot : IShot
     {
-        override public Object wykonaj(Metoda m,Canvas canvas) { return m.WykonajNaSingle(this,canvas); }
+        override public Object wykonaj(Metoda m,Canvas canvas,Object ob=null) { return m.WykonajNaSingle(this,canvas,ob); }
     }
 }

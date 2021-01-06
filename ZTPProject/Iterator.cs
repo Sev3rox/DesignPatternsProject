@@ -18,13 +18,17 @@ namespace ZTPProject
         public override Object Next() {
             if (Enemies.Count > 1)
             {
-                var index = rnd.Next(0, Enemies.Count-1);
+                var index = rnd.Next(0, Enemies.Count - 1);
                 Enemy enemy = Enemies[index];
                 Enemies.Remove(enemy);
                 return enemy;
             }
-            else 
-                return Enemies[0];
+            else
+            {
+                Enemy enemy = Enemies[0];
+                Enemies.Remove(enemy);
+                return enemy;
+            }
         }
         public override bool hasNext(){
             if (Enemies.Count<=0)

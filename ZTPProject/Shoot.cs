@@ -17,7 +17,7 @@ namespace ZTPProject
     class Shoot:Metoda
     {
         private Image ima1;
-        public Object WykonajNaSingle(SingleShot shot,Canvas canvas) {
+        public Object WykonajNaSingle(SingleShot shot,Canvas canvas,Object ob=null) {
             ima1 = new Image
             {
 
@@ -33,7 +33,7 @@ namespace ZTPProject
             shot.setImage(ima1);
             return ima1;
         }
-        public Object WykonajNaTShot(TShot shot,Canvas canvas) {
+        public Object WykonajNaTShot(TShot shot,Canvas canvas, Object ob = null) {
             ima1 = new Image
             {
 
@@ -49,7 +49,7 @@ namespace ZTPProject
             shot.setImage(ima1);
             return ima1;
         }
-        public Object WykonajNaBigTShot(BigTShot shot,Canvas canvas) {
+        public Object WykonajNaBigTShot(BigTShot shot,Canvas canvas, Object ob = null) {
             ima1 = new Image
             {
 

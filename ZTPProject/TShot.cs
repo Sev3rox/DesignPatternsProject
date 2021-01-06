@@ -16,6 +16,6 @@ namespace ZTPProject
 {
     class TShot:IShot
     {
-        override public Object wykonaj(Metoda m,Canvas canvas) { return m.WykonajNaTShot(this,canvas); }
+        override public Object wykonaj(Metoda m,Canvas canvas, Object ob = null) { return m.WykonajNaTShot(this,canvas,ob); }
     }
 }
