@@ -5,7 +5,7 @@ using System.Text;
 namespace ZTPProject
 {
 
-    abstract class InterfaceEnemy
+    abstract public class InterfaceEnemy
     {
 
         public abstract EnemySpaceShip getEnemySpaceShip();
@@ -17,7 +17,7 @@ namespace ZTPProject
 
        
     }
-    class Enemy : InterfaceEnemy
+    public class Enemy : InterfaceEnemy
     {
         private EnemySpaceShip enemySpaceShip;
         private Strategia strategy;

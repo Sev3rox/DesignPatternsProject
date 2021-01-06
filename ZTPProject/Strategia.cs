@@ -6,7 +6,7 @@ using System.Windows.Controls;
 
 namespace ZTPProject
 {
-    abstract class Strategia
+    abstract public class Strategia
     {
         public abstract void Poruszanie(EnemySpaceShip enemy);
         public abstract Strategia DeepCopy();

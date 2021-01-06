@@ -34,7 +34,7 @@ namespace ZTPProject
         }
         override public List<IShot> shoot(List<IShot> list, Canvas canvas)
         {
-            IShot single = new TShot();
+            IShot single = new BigTShot();
             Point pos = new Point();
             pos.setY(Canvas.GetTop(this.getImage()) + 65);
             pos.setX(Canvas.GetLeft(this.getImage()) + 38);

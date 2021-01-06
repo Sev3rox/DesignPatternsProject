@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Files\BigTShot.png" />
     <None Remove="Files\Boss.png" />
     <None Remove="Files\Coin.png" />
     <None Remove="Files\EndGameLogo.png" />
@@ -27,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Files\BigTShot.png" />
     <Resource Include="Files\MYship.png" />
   </ItemGroup>
 

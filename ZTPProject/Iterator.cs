@@ -4,13 +4,13 @@ using System.Text;
 
 namespace ZTPProject
 {
-    abstract class Iterator
+    abstract public class Iterator
     {
         public abstract Object Next();
         public abstract bool hasNext();
     }
 
-    class EnemysIterator : Iterator
+    public class EnemysIterator : Iterator
     {
         private Random rnd = new Random();
         private List<Enemy> Enemies;
@@ -38,12 +38,12 @@ namespace ZTPProject
         }
     }
 
-    abstract class IList
+    abstract public class IList
     {
         public abstract Iterator CreateIterator();
     }
 
-    class EnemyList : IList
+    public class EnemyList : IList
     {
         private List<Enemy> Enemies;
         public EnemyList(List<Enemy> list) { Enemies = list; }

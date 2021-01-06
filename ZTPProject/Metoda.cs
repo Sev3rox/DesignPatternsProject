@@ -14,7 +14,7 @@ using System.Windows.Threading;
 
  namespace ZTPProject
 {
-    interface Metoda
+    public interface Metoda
     {
         Object WykonajNaSingle(SingleShot shot,Canvas canvas,Object ob=null);
         Object WykonajNaTShot(TShot shot, Canvas canvas, Object ob=null);

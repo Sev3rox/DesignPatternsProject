@@ -15,7 +15,7 @@ using System.Windows.Threading;
 
 namespace ZTPProject
 {
-    abstract class EnemySpaceShip
+    abstract public class EnemySpaceShip
     {
         private Point position;
         private float healthPoints;

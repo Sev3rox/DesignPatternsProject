@@ -13,7 +13,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 namespace ZTPProject
 {
-    class SingleShot : IShot
+    public class SingleShot : IShot
     {
         override public Object wykonaj(Metoda m,Canvas canvas,Object ob=null) { return m.WykonajNaSingle(this,canvas,ob); }
     }

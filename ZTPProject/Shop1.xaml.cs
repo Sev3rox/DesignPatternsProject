@@ -22,7 +22,8 @@ namespace ZTPProject
         double result;
         DBConnection connection;
         Player player;
-        public Shop1(DBConnection connection, double result,Player player)
+        Difficulty difficulty;
+        public Shop1(DBConnection connection, double result,Player player,Difficulty difficulty)
         {
             InitializeComponent();
             if (connection.GetContext() == null)
@@ -31,6 +32,7 @@ namespace ZTPProject
             this.context = connection.GetContext();
             this.result = result;
             this.player = player;
+            this.difficulty = difficulty;
             Mon.Content = player.getMoney();
             Res.Content = "Twój Wynik: " + result.ToString();
             Hp.Content = player.getHealthPoints();
@@ -56,22 +58,25 @@ namespace ZTPProject
         private void Next(object sender, RoutedEventArgs e)
         {
             NavigationService nav = NavigationService.GetNavigationService(this);
-            nav.Navigate(new Game(connection));
+            nav.Navigate(new Game(connection,result,player,difficulty));
         }
 
         private void Dmg(object sender, RoutedEventArgs e)
         {
-
+            player.setMoney(player.getMoney() - 10);
+            player = new FlatDamageBonus(player);
         }
 
         private void DmgProcent(object sender, RoutedEventArgs e)
         {
-
+            player.setMoney(player.getMoney() - 10);
+            player = new DamageMultiplier(player);
         }
 
         private void Money(object sender, RoutedEventArgs e)
         {
-
+            player.setMoney(player.getMoney() - 10);
+            player = new MoneyMultiplier(player);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace ZTPProject
 {
@@ -42,6 +44,10 @@ namespace ZTPProject
                 lista.Add(en);
             }
             return new EnemyList(lista);
+        }
+        public override BitmapImage getBackground()
+        {
+            return new BitmapImage(new Uri("../../../Files/SpaceBlue.jpg", UriKind.Relative));
         }
     }
 }

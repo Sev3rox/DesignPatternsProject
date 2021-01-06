@@ -47,5 +47,9 @@ namespace ZTPProject
             }
             return new EnemyList(lista);
         }
+        public override BitmapImage getBackground()
+        {
+            return new BitmapImage(new Uri("../../../Files/SpaceLightBlue.jpg", UriKind.Relative));
+        }
     }
 }

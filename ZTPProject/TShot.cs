@@ -14,7 +14,7 @@ using System.Windows.Threading;
 
 namespace ZTPProject
 {
-    class TShot:IShot
+    public class TShot:IShot
     {
         override public Object wykonaj(Metoda m,Canvas canvas, Object ob = null) { return m.WykonajNaTShot(this,canvas,ob); }
     }

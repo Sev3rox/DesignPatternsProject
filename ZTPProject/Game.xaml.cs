@@ -44,15 +44,19 @@ namespace ZTPProject
         private double result;
         private int killed;
         private DBConnection connection;
-        public Game(DBConnection connection)
+        public Game(DBConnection connection, double result=0, Player player=null,Difficulty difficulty=null)
         {
             InitializeComponent();
-            //snake = new Snakee(x, y);
-            imgspace.ImageSource = new BitmapImage(new Uri("../../../Files/SpaceLightBlue.jpg", UriKind.Relative));
-           //imgspace.ImageSource = new BitmapImage(new Uri("../../../Files/SpaceBlue.jpg", UriKind.Relative));
-          //imgspace.ImageSource = new BitmapImage(new Uri("../../../Files/Space.jpg", UriKind.Relative));
-
-
+            if(player==null)
+            {
+                player = new PlayerSpaceShip();
+                player.setHealthPoints(1);
+            }
+            if (difficulty == null) difficulty = new Easy();
+            this.result = result;
+            this.player = player;
+            this.difficulty = difficulty;
+            imgspace.ImageSource = this.difficulty.getBackground();
             this.connection = connection;
             SetTimer();
             SetTimer2();
@@ -76,7 +80,6 @@ namespace ZTPProject
             Canvas.SetLeft(ima1, canvas.Width/2-49);//139
             Canvas.SetTop(ima1, canvas.Height-84);//129
             Loaded += (xx, yy) => Keyboard.Focus(grid);
-            
             player.setMoneyMultiplier(difficulty.getMoneyMultiplier());
             scoreMultiplier = difficulty.getScoreMultiplier();
             org[0] = new NormalEnemySS();
@@ -90,7 +93,6 @@ namespace ZTPProject
             org[4] = new BestestEnemySS();
             set(org[4], 10, 30, 3, "Boss.png", new PoosiX(),5);
             enemys = difficulty.enemyGenerate(org);
-            player.setHealthPoints(1);
             iter = (EnemysIterator)enemys.CreateIterator();
             xmlhp.Content = player.getHealthPoints();
             xmlmoney.Content = player.getMoney();
@@ -271,7 +273,7 @@ namespace ZTPProject
                 else if (killed == 20)
                 {   /// tu if do engame jak jestesmy na hard;
                     NavigationService nav = NavigationService.GetNavigationService(this);
-                    nav.Navigate(new Shop1(connection,result,player));
+                    nav.Navigate(new Shop1(connection,result,player,difficulty));
                     this.aTimer.Stop();
                     this.bTimer.Stop();
                     this.cTimer.Stop();
