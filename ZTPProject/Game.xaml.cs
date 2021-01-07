@@ -32,10 +32,10 @@ namespace ZTPProject
         private int cooldown = 0;
         private List<Image> self = new List<Image>();
         private EnemyList enemys;
-        private List<Enemy> incombat=new List<Enemy>();
-        private Enemy en;
+        private List<ProxyEnemy> incombat=new List<ProxyEnemy>();
+        private ProxyEnemy en;
         private Player player = new PlayerSpaceShip();
-        private Difficulty difficulty = new Easy();
+        private Difficulty difficulty;
         private EnemySpaceShip[] org=new EnemySpaceShip[5];
         private double scoreMultiplier;
         private int buffor;
@@ -44,6 +44,7 @@ namespace ZTPProject
         private double result;
         private int killed;
         private DBConnection connection;
+        private int Count;
         public Game(DBConnection connection, double result=0, Player player=null,Difficulty difficulty=null)
         {
             InitializeComponent();
@@ -93,6 +94,7 @@ namespace ZTPProject
             org[4] = new BestestEnemySS();
             set(org[4], 10, 30, 3, "Boss.png", new PoosiX(),5);
             enemys = difficulty.enemyGenerate(org);
+            Count = enemys.Count();
             iter = (EnemysIterator)enemys.CreateIterator();
             xmlhp.Content = player.getHealthPoints();
             xmlmoney.Content = player.getMoney();
@@ -194,7 +196,7 @@ namespace ZTPProject
                 Canvas.SetTop(im, Canvas.GetTop(im) - 10); labe.Content = Canvas.GetTop(im);
                 for (int j = 0; j < incombat.Count; j++)
                 {
-                    Enemy en = incombat[j];
+                    ProxyEnemy en = incombat[j];
                     Image img = en.getEnemySpaceShip().getImage();
                     if (check(im, img))
                     {
@@ -251,7 +253,7 @@ namespace ZTPProject
             {
                 if (iter.hasNext())
                 {
-                    en = (Enemy)iter.Next();
+                    en = (ProxyEnemy)iter.Next();
                     en.setX(rnd.Next(0, 6));
                     Image ima = new Image
                     {
@@ -270,7 +272,7 @@ namespace ZTPProject
                     Canvas.SetTop(ima, 0);
                     incombat.Add(en);
                 }
-                else if (killed == 20)
+                else if (killed == Count)
                 {   /// tu if do engame jak jestesmy na hard;
                     NavigationService nav = NavigationService.GetNavigationService(this);
                     nav.Navigate(new Shop1(connection,result,player,difficulty));

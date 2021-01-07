@@ -7,7 +7,7 @@ namespace ZTPProject
 {
     public class ZTPContext : DbContext
     {
-    public DbSet<StanGry> StanyGry { get; set; }
+    public DbSet<StanGry> StanGry { get; set; }
         public DbSet<Wyniki> Wyniki { get; set; }
 
         public ZTPContext(DbContextOptions<ZTPContext> options) : base(options)
@@ -18,7 +18,7 @@ namespace ZTPProject
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        { 
             modelBuilder.Entity<StanGry>();
             modelBuilder.Entity<Wyniki>();
             base.OnModelCreating(modelBuilder);

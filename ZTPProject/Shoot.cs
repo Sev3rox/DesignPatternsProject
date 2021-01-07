@@ -24,7 +24,7 @@ namespace ZTPProject
             };
             BitmapImage bi1 = new BitmapImage();
             bi1.BeginInit();
-            bi1.UriSource = new Uri("/Files/Shot.png", UriKind.Relative);
+            bi1.UriSource = new Uri("/Files/EnemyShot.png", UriKind.Relative);
             bi1.EndInit();
             ima1.Source = bi1;
             canvas.Children.Add(ima1);

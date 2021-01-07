@@ -37,7 +37,7 @@ namespace ZTPProject
         {
             Wyniki wyn = new Wyniki();
             wyn.result = result;
-            if (text.Text != "")
+            if (text.Text != ""&&text.Text!= "Twój Nick:")
                 wyn.nick = text.Text;
             else
                 wyn.nick = "NoName";

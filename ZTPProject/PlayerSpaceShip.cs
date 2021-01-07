@@ -10,6 +10,7 @@ namespace ZTPProject
         private Point position;
         private double money;
         private double moneyMultiplier;
+        override public Player getPlayer() { return null; }
         override public float getDamage() { return 1; }
         override public double getMoneyMultiplier() { return moneyMultiplier; }
         override public void setHealthPoints(int hp) { healthPoints = hp; }

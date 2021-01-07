@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -61,7 +62,49 @@ namespace ZTPProject
 
         private void Continue(object sender, RoutedEventArgs e)
         {
-        
+            if (connection.GetContext() == null)
+                connection.CreateContext();
+            con = connection.GetContext();
+            if (con.StanGry.ToList().Count >0)
+            {
+                var load = con.StanGry.First();
+                Player player = new PlayerSpaceShip();
+                player.setHealthPoints(load.hp);
+                player.setMoney(load.money);
+                var deko = load.dekorator.Split(',');
+                foreach (string s in deko)
+                {
+                    if (s != null || s != "")
+                    {
+                        if (s == "DamageMultiplier")
+                        {
+                            player = new DamageMultiplier(player);
+                        }
+                        if (s == "MoneyMultiplier")
+                        {
+                            player = new MoneyMultiplier(player);
+                        }
+                        if (s == "FlatDamageBonus")
+                        {
+                            player = new FlatDamageBonus(player);
+                        }
+                    }
+                }
+                Difficulty dif;
+                if (load.difficulty == "Easy")
+                {
+                    dif = new Normal();
+                }
+                else
+                {
+                    dif = new Hard();
+                }
+
+                NavigationService nav = NavigationService.GetNavigationService(this);
+                nav.Navigate(new Game(connection, load.result, player, dif));
+                con.StanGry.Remove(load);
+                con.SaveChanges();
+            }
         }
     }
 }

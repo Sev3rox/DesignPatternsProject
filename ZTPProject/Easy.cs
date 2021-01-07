@@ -18,15 +18,15 @@ namespace ZTPProject
         }
         public override EnemyList enemyGenerate(EnemySpaceShip[] enemyList)
         {
-            int l1 = 0;
-            int l2 = 0;
-            int l3 = 9;
-            List<Enemy> lista = new List<Enemy>();
+            int l1 = 9;
+            int l2 = 9;
+            int l3 = 2;
+            List<ProxyEnemy> lista = new List<ProxyEnemy>();
             for(int i=0;i<l1;i++)
             {
                 EnemySpaceShip enS=enemyList[0].clone();
-               
-                Enemy en = new Enemy();
+
+                ProxyEnemy en = new ProxyEnemy();
                 en.setEnemySpaceShip(enS);
                
                 lista.Add(en);
@@ -34,14 +34,14 @@ namespace ZTPProject
             for (int i = 0; i < l2; i++)
             {
                 EnemySpaceShip enS = enemyList[1].clone();
-                Enemy en = new Enemy();
+                ProxyEnemy en = new ProxyEnemy();
                 en.setEnemySpaceShip(enS);
                 lista.Add(en);
             }
             for (int i = 0; i < l3; i++)
             {
                 EnemySpaceShip enS = enemyList[2].clone();
-                Enemy en = new Enemy();
+                ProxyEnemy en = new ProxyEnemy();
                 en.setEnemySpaceShip(enS);
                 lista.Add(en);
             }

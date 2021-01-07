@@ -7,7 +7,7 @@ namespace ZTPProject
     abstract class Bought : Player
     {
         private Player player;
-        public Player getPlayer() { return player; }
+        override public Player getPlayer() { return player; }
         public void setPlayer(Player pla) { player = pla; }
         override abstract public float getDamage();
         override abstract public double getMoneyMultiplier();

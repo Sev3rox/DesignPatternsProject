@@ -6,6 +6,7 @@ namespace ZTPProject
 {
     public abstract class Player
     {
+        abstract public Player getPlayer();
         abstract public float getDamage();
         abstract public double getMoneyMultiplier();
         abstract public void setHealthPoints(int hp);

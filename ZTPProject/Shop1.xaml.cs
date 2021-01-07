@@ -43,13 +43,23 @@ namespace ZTPProject
         private void Save(object sender, RoutedEventArgs e)
         {
             StanGry save = new StanGry();
-            save.dmg  = player.getDamage();
-            save.hp = player.getHealthPoints();
-            save.lvl = 0;   /////////////////////////////////Tu kot zmien bo idk jak bedziesz robil
+            save.hp = player.getHealthPoints();   /////////////////////////////////Tu kot zmien bo idk jak bedziesz robil
             save.money = player.getMoney();
-            save.MoneyP = player.getMoneyMultiplier();
             save.result = result;
-            context.StanyGry.Add(save);
+            List<String> s=new List<String>();
+            while(!(player is PlayerSpaceShip)) 
+                { 
+                s.Add(player.GetType().ToString()); 
+                player = player.getPlayer(); 
+                }
+            String deko="";
+            for (int i=s.Count-1; i >=0; i--){
+                deko += s[i]+",";
+            }
+            save.dekorator = deko;
+
+            save.difficulty = difficulty.GetType().ToString();
+            context.StanGry.Add(save);
             context.SaveChanges();
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new MenuPage());
@@ -57,6 +67,8 @@ namespace ZTPProject
 
         private void Next(object sender, RoutedEventArgs e)
         {
+            if (difficulty is Normal) difficulty = new Hard();
+            if (difficulty is Easy) difficulty = new Normal();
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new Game(connection,result,player,difficulty));
         }

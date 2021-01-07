@@ -36,10 +36,10 @@ namespace ZTPProject
         {
             Wyniki wyn = new Wyniki();
             wyn.result = result;
-            if(text.Text!="")
+            if(text.Text!=""&& text.Text != "Twój Nick:")
             wyn.nick =text.Text;
             else
-            wyn.nick = "Noname";
+            wyn.nick = "NoName";
             context.Wyniki.Add(wyn);
             context.SaveChanges();
             NavigationService nav = NavigationService.GetNavigationService(this);

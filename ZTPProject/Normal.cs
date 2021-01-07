@@ -21,25 +21,25 @@ namespace ZTPProject
             int l1 = 9;
             int l2 = 9;
             int l3 = 2;
-            List<Enemy> lista = new List<Enemy>();
+            List<ProxyEnemy> lista = new List<ProxyEnemy>();
             for (int i = 0; i < l1; i++)
             {
                 EnemySpaceShip enS = enemyList[1].clone();
-                Enemy en = new Enemy();
+                ProxyEnemy en = new ProxyEnemy();
                 en.setEnemySpaceShip(enS);
                 lista.Add(en);
             }
             for (int i = 0; i < l2; i++)
             {
                 EnemySpaceShip enS = enemyList[2].clone();
-                Enemy en = new Enemy();
+                ProxyEnemy en = new ProxyEnemy();
                 en.setEnemySpaceShip(enS);
                 lista.Add(en);
             }
             for (int i = 0; i < l3; i++)
             {
                 EnemySpaceShip enS = enemyList[3].clone();
-                Enemy en = new Enemy();
+                ProxyEnemy en = new ProxyEnemy();
                 en.setEnemySpaceShip(enS);
                 lista.Add(en);
             }

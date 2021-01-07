@@ -40,20 +40,24 @@ namespace ZTPProject
 
     }
 
-    class ProxyEnemy : InterfaceEnemy
+   public  class ProxyEnemy : InterfaceEnemy
     {
         private Enemy enemy=null;
-    public ProxyEnemy() { }
+        private EnemySpaceShip enship=null;
+        public ProxyEnemy() { }
 
          public override EnemySpaceShip getEnemySpaceShip() {
-           if (enemy == null)
-                return null;
+            if (enemy == null)
+            {
+                if (enship != null)
+                    return enship;
+                else return null;
+            }
          return enemy.getEnemySpaceShip() ;
           }
          public override void setEnemySpaceShip(EnemySpaceShip enship) {
-         if (enemy == null)
-                enemy = new Enemy();
-        enemy.setEnemySpaceShip(enship);
+            this.enship = enship;
+      
         }
         public override int getX() {
             if (enemy == null)
@@ -63,7 +67,11 @@ namespace ZTPProject
         }
         public override void setX(int x) {
             if (enemy == null)
+            {
                 enemy = new Enemy();
+                enemy.setEnemySpaceShip(enship);
+               enship = null;           
+            }
             enemy.setX(x);
                 }
   
