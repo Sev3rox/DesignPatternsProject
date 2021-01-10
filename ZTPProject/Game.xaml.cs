@@ -37,7 +37,6 @@ namespace ZTPProject
         private Player player = new PlayerSpaceShip();
         private Difficulty difficulty;
         private EnemySpaceShip[] org=new EnemySpaceShip[5];
-        private double scoreMultiplier;
         private int buffor;
         private bool isEnemy = false;
         private EnemysIterator iter;
@@ -82,7 +81,6 @@ namespace ZTPProject
             Canvas.SetTop(ima1, canvas.Height-84);//129
             Loaded += (xx, yy) => Keyboard.Focus(grid);
             player.setMoneyMultiplier(difficulty.getMoneyMultiplier());
-            scoreMultiplier = difficulty.getScoreMultiplier();
             org[0] = new NormalEnemySS();
             set(org[0],1,2,3,"Enemy1.png",new Szarża(),-1);
             org[1] = new GoodEnemySS();
@@ -203,7 +201,7 @@ namespace ZTPProject
                         canvas.Children.Remove(im);
                         self.Remove(im);
                         int check = 1;
-                        if (en.getEnemySpaceShip().GetType() is BestEnemySS)
+                        if (en.getEnemySpaceShip() is BestEnemySS)
                         {
                             if (((BestEnemySS)en.getEnemySpaceShip()).getShield() == true)
                             {
@@ -274,12 +272,16 @@ namespace ZTPProject
                 }
                 else if (killed == Count)
                 {   /// tu if do engame jak jestesmy na hard;
-                    NavigationService nav = NavigationService.GetNavigationService(this);
-                    nav.Navigate(new Shop1(connection,result,player,difficulty));
+                    
                     this.aTimer.Stop();
                     this.bTimer.Stop();
                     this.cTimer.Stop();
                     this.dTimer.Stop();
+                    NavigationService nav = NavigationService.GetNavigationService(this);
+                    if(difficulty.getScoreMultiplier()!=2)
+                    nav.Navigate(new Shop1(connection,result,player,difficulty));
+                    else
+                        nav.Navigate(new EndGame(connection, result));
                 }
                 buffor = 100;
             }
