@@ -35,7 +35,7 @@ namespace ZTPProject
             IShot single = new BigTShot();
             Point pos = new Point();
             pos.setY(Canvas.GetTop(this.getImage()) + 65);
-            pos.setX(Canvas.GetLeft(this.getImage()) + 38);
+            pos.setX(Canvas.GetLeft(this.getImage()) + 138);
             single.setPosition(pos);
             Metoda shoot = new Shoot();
             single.setImage((Image)single.wykonaj(shoot, canvas));

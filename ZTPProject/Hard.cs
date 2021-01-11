@@ -10,11 +10,11 @@ namespace ZTPProject
     {
         public override double getMoneyMultiplier()
         {
-            return 2;
+            return 0.5;
         }
         public override double getScoreMultiplier()
         {
-            return 0.5;
+            return 2;
         }
         public override EnemyList enemyGenerate(EnemySpaceShip[] enemyList)
         {

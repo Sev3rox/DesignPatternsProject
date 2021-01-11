@@ -50,7 +50,7 @@ namespace ZTPProject
             if(player==null)
             {
                 player = new PlayerSpaceShip();
-                player.setHealthPoints(1);
+                player.setHealthPoints(20);
             }
             if (difficulty == null) difficulty = new Easy();
             this.result = result;
@@ -82,15 +82,15 @@ namespace ZTPProject
             Loaded += (xx, yy) => Keyboard.Focus(grid);
             player.setMoneyMultiplier(difficulty.getMoneyMultiplier());
             org[0] = new NormalEnemySS();
-            set(org[0],1,2,3,"Enemy1.png",new Szarża(),-1);
+            set(org[0],1,(int)((double)6*difficulty.getScoreMultiplier()),3,"Enemy1.png",new Szarża(),-1);
             org[1] = new GoodEnemySS();
-            set(org[1], 2, 2, 1, "Enemy2.png", new Nieruchome(),5);
+            set(org[1], 2, (int)((double)6 * difficulty.getScoreMultiplier()), 1, "Enemy2.png", new Nieruchome(),5);
             org[2] = new BetterEnemySS();
-            set(org[2], 3, 2, 3, "Enemy3.png", new Teleportacja(),5);
+            set(org[2], 3, (int)((double)10 * difficulty.getScoreMultiplier()), 2, "Enemy3.png", new Teleportacja(),5);
             org[3] = new BestEnemySS();
-            set(org[3], 4, 3, 3, "Enemy4.png", new PoosiachXY(),5);
+            set(org[3], 4, (int)((double)12 * difficulty.getScoreMultiplier()), 3, "Enemy4.png", new PoosiachXY(),5);
             org[4] = new BestestEnemySS();
-            set(org[4], 10, 30, 3, "Boss.png", new PoosiX(),5);
+            set(org[4], 10, (int)((double)144 * difficulty.getScoreMultiplier()), 5, "Boss.png", new PoosiX(),5);
             enemys = difficulty.enemyGenerate(org);
             Count = enemys.Count();
             iter = (EnemysIterator)enemys.CreateIterator();
@@ -117,7 +117,7 @@ namespace ZTPProject
         private void SetTimer2()
         {
             bTimer.Tick += OnTimedEvent2;
-            bTimer.Interval = new TimeSpan(0, 0, 0, 0, 50);
+            bTimer.Interval = new TimeSpan(0, 0, 0, 0, 10);
             bTimer.Start();
         }
         private void SetTimer3()
@@ -135,7 +135,7 @@ namespace ZTPProject
         private void SetTimer5()
         {
             eTimer.Tick += OnTimedEvent5;
-            eTimer.Interval=new TimeSpan(0, 0, 0, 0, 50);
+            eTimer.Interval=new TimeSpan(0, 0, 0, 0, 500);
             eTimer.Start();
         }
         private void OnTimedEvent5(Object source, EventArgs e)
@@ -198,6 +198,7 @@ namespace ZTPProject
                     Image img = en.getEnemySpaceShip().getImage();
                     if (check(im, img))
                     {
+
                         canvas.Children.Remove(im);
                         self.Remove(im);
                         int check = 1;
@@ -212,12 +213,12 @@ namespace ZTPProject
                         {
                             en.getEnemySpaceShip().setHealthPoints(en.getEnemySpaceShip().getHealthPoints() - player.getDamage());
                         }
-                        if (en.getEnemySpaceShip().getHealthPoints() < 0)
+                        if (en.getEnemySpaceShip().getHealthPoints() <= 0)
                         {
                             incombat.Remove(en);
                             canvas.Children.Remove(en.getEnemySpaceShip().getImage());
                             killed++;
-                            player.setMoney(player.getMoney() + en.getEnemySpaceShip().getMoney() * difficulty.getMoneyMultiplier() * player.getMoneyMultiplier());
+                            player.setMoney(player.getMoney() + en.getEnemySpaceShip().getMoney()  * player.getMoneyMultiplier());
                             result += en.getEnemySpaceShip().getMoney() * difficulty.getScoreMultiplier();
                             xmlresult.Content = "Wynik: " + result;
                             xmlmoney.Content = player.getMoney();
@@ -250,9 +251,15 @@ namespace ZTPProject
             if (buffor == 0 && isEnemy == false)
             {
                 if (iter.hasNext())
-                {
-                    en = (ProxyEnemy)iter.Next();
-                    en.setX(rnd.Next(0, 6));
+                {en = (ProxyEnemy)iter.Next();
+                    if(!(en.getEnemySpaceShip() is BestestEnemySS))
+                    {
+                        en.setX(rnd.Next(0, 6));
+                    }
+                    else
+                    {
+                        en.setX(3);
+                    }
                     Image ima = new Image
                     {
 

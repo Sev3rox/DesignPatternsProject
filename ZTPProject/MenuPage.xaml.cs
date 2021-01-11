@@ -76,22 +76,23 @@ namespace ZTPProject
                 {
                     if (s != null || s != "")
                     {
-                        if (s == "DamageMultiplier")
+                        if (s == "ZTPProject.DamageMultiplier")
                         {
                             player = new DamageMultiplier(player);
                         }
-                        if (s == "MoneyMultiplier")
+                        if (s == "ZTPProject.MoneyMultiplier")
                         {
                             player = new MoneyMultiplier(player);
                         }
-                        if (s == "FlatDamageBonus")
+                        if (s == "ZTPProject.FlatDamageBonus")
                         {
                             player = new FlatDamageBonus(player);
                         }
                     }
                 }
                 Difficulty dif;
-                if (load.difficulty == "Easy")
+                string ss = load.difficulty;
+                if (load.difficulty == "ZTPProject.Easy")
                 {
                     dif = new Normal();
                 }

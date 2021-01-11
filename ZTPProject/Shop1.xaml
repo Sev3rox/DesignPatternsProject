@@ -56,7 +56,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="5" Grid.Column="1" Grid.RowSpan="2">
             <StackPanel>
-                <Label Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="8">Dmg 5$</Label>
+                <Label Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="8">Dmg 10$</Label>
                 <Button  Padding="10,5,10,5"  Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="22,0,70,0" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="3" Click="Dmg" >
                     <Button.Background>
                         <ImageBrush ImageSource="/Files/SpaceBlue.jpg" />
@@ -89,7 +89,7 @@
 
             </StackPanel>
         <StackPanel>
-        <Label Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="8">%Dmg 10$</Label>
+        <Label Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="8">%Dmg 15$</Label>
                 <Button Padding="10,5,10,5"   Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="40,0,70,0" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="3" Click="DmgProcent" >
                     <Button.Background>
                         <ImageBrush ImageSource="/Files/SpaceBlue.jpg" />
@@ -122,7 +122,7 @@
 
             </StackPanel>
         <StackPanel >
-                <Label Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="8" Content="%$ 15$"/>
+                <Label Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="8" Content="%$ 20$"/>
                 <Button Padding="10,5,10,5"  Foreground="AntiqueWhite" FontSize="20" FontWeight="Bold" Margin="20,0,70,0" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="3" Click="Money" >
                     <Button.Background>
                         <ImageBrush ImageSource="/Files/SpaceBlue.jpg" />

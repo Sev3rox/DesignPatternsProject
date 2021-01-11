@@ -75,7 +75,7 @@ namespace ZTPProject
 
             };
             ima = enemy.getImage();
-            if (Canvas.GetLeft(ima)>(600-105))
+            if (Canvas.GetLeft(ima)>(310))
             {
                 isRight = false;
             }
@@ -85,10 +85,10 @@ namespace ZTPProject
             }
             if(isRight == true)
             { 
-                Canvas.SetLeft(ima, Canvas.GetLeft(ima) + 5);  
+                Canvas.SetLeft(ima, Canvas.GetLeft(ima) + 10);  
             }
            else {
-                Canvas.SetLeft(ima, Canvas.GetLeft(ima) - 5);
+                Canvas.SetLeft(ima, Canvas.GetLeft(ima) - 10);
             }
         }
     }
@@ -160,7 +160,7 @@ namespace ZTPProject
 
                 };
                 ima = enemy.getImage();
-                Canvas.SetTop(ima, Canvas.GetTop(ima) + 5);
+                Canvas.SetTop(ima, Canvas.GetTop(ima) + 10);
                
             
         }
