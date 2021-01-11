@@ -145,7 +145,7 @@ namespace ZTPProject
                 if (incombat[i].getEnemySpaceShip().getCD()>0)
                 {
                     incombat[i].getEnemySpaceShip().setCD(incombat[i].getEnemySpaceShip().getCD() - 1);
-                    labe.Content = incombat[i].getEnemySpaceShip().getCD();
+                  
                 }
                 
                 else
@@ -153,7 +153,7 @@ namespace ZTPProject
                     EnemySpaceShip temp = incombat[i].getEnemySpaceShip();
                     list=incombat[i].getEnemySpaceShip().shoot(list,canvas);
                     incombat[i].getEnemySpaceShip().setCD(5);
-                    labe.Content = incombat[i].getEnemySpaceShip().getCD();
+                 
                 }
             }
         }
@@ -191,7 +191,7 @@ namespace ZTPProject
             for (int i = 0; i < self.Count; i++)
             {
                 Image im = self[i];
-                Canvas.SetTop(im, Canvas.GetTop(im) - 10); labe.Content = Canvas.GetTop(im);
+                Canvas.SetTop(im, Canvas.GetTop(im) - 10); 
                 for (int j = 0; j < incombat.Count; j++)
                 {
                     ProxyEnemy en = incombat[j];
@@ -359,17 +359,17 @@ namespace ZTPProject
                 case Key.Left:
                     mov = -1;
                     startTimer();
-                    //labe.Content = mov;
+                   
                     break;
                 case Key.Right:
                     mov = 1;
                     startTimer();
-                    //labe.Content = mov;
+            
                     break;
                 case Key.Up:
 
                     if (cooldown == 0)
-                    {//labe.Content = cooldown;
+                    {
                         Image ima = new Image
                         {
 
@@ -393,7 +393,7 @@ namespace ZTPProject
         {
             stopTimer();
             mov = 0;
-            //labe.Content = mov;
+
         }
      
     }

@@ -26,7 +26,7 @@
         <Canvas Name="canvas" Background="Transparent" Focusable="True" Width="600" Height="600" KeyDown="KeyEvent" PreviewKeyDown="KeyEvent"
                  KeyUp="KeyEvent2" PreviewKeyUp="KeyEvent2" IsEnabled="True" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}">
         </Canvas>
-        <Label  Foreground="#FF0A870A" FontWeight="Bold" Content="Label" Name="labe" HorizontalAlignment="Center" VerticalAlignment="Top" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}" Margin="131,10,131,0"  FontSize="32"/>
+       
         <Label  Foreground="AntiqueWhite"  Content="Wynik: 0" Name="xmlresult"  VerticalAlignment="Top" FocusVisualStyle="{DynamicResource MyFocusVisualStyle}" Margin="10,0,131,0"  FontSize="20"/>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" >
             <Image HorizontalAlignment="Right" Width="35" Height="35" Source="Files/coin.png"></Image>

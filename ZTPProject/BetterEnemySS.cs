@@ -40,7 +40,7 @@ namespace ZTPProject
             single.setPosition(pos);
             Metoda shoot = new Shoot();
             single.setImage((Image)single.wykonaj(shoot, canvas));
-            single.setDamage(1);
+            single.setDamage(getDamage());
             list.Add(single);
             return list;
         }
